@@ -1,0 +1,137 @@
+body {
+  background-color: #ae1332;
+}
+
+.how-it-works {
+  display: flex;
+  width: 1216px;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 44px;
+}
+
+.how-it-works .container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 14px;
+  width: 624px;
+}
+.how-it-works .title {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 44px; /* 110% */
+  letter-spacing: -1.6px;
+  text-transform: uppercase;
+  width: 624px;
+}
+
+.how-it-works .description {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  width: 509px;
+  margin: auto;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  width: 389px;
+  height: 128px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.step-1,
+.step-2,
+.step-3 {
+  display: flex;
+}
+
+.step-1 .step-title {
+  background: #ae1332;
+}
+
+.step-2 .step-title {
+  background: #a1c864;
+}
+
+.step-3 .step-title {
+  background: #f5ce13;
+}
+
+.step-title {
+  margin: auto;
+  margin-left: 20px;
+  margin-right: 14px;
+  display: flex;
+  padding: 15px 42px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 200px;
+
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: -0.72px;
+}
+
+.step-description {
+  margin: auto;
+  /* text-align: center; */
+  justify-content: center;
+  width: 166px;
+  color: black;
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+}
+
+.step-list {
+  list-style: none;
+
+  gap: 24px;
+  padding: 0;
+  display: block;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.container-fresh-harvest {
+  width: 860px;
+  height: 476px;
+
+  border-radius: 20px;
+  background: url('../images/fresh-harvest.gif'),
+    lightgray 0px -2.437px / 100% 101.864% no-repeat;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 476px;
+  }
+}
