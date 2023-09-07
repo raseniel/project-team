@@ -80,6 +80,12 @@
   font-weight: 400;
   text-decoration: none;
   color: inherit;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #9dc262;
 }
 
 .footer-contact {
@@ -113,6 +119,12 @@
   display: flex;
   gap: 8px;
   background-color: var(--white-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-list-link:hover,
+.footer-list-link:focus {
+  background-color: #ae13321a;
 }
 
 .footer-contact-details {
