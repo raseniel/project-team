@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Harvest Box</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <!-- Fruits -->
+      <section class="section fruits-section">
+        <div class="container">
+          <h2 class="fruits-header">oRGANIC fRUITS</h2>
+          <p class="fruits-text">
+            Our organic fruits are hand-picked from local farms and delivered
+            straight to your doorstep, ensuring that you get the freshest and
+            most nutritious produce possible. We offer a wide selection of
+            organic fruits grown without the use of harmful pesticides or
+            chemicals.
+          </p>
+
+          <div class="fruits-container">
+            <div class="fruits-wrapper">
+              <picture class="strawberry fruits-image">
+                <h3 class="fruits-container-header">Strawberry</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="
+                    ./images/strawberry.png    1x,
+                    ./images/strawberry@2x.png 2x
+                  "
+                />
+
+                <img
+                  src="./images/strawberry.png"
+                  alt="Strawberry"
+                  width="295"
+                />
+                <p class="fruits-container-price">100 UAH / kg</p>
+              </picture>
+              <picture class="banana fruits-image">
+                <h3 class="fruits-container-header">Banana</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/banana.png 1x, ./images/banana@2x.png 2x"
+                />
+
+                <img src="./images/banana.png" alt="Banana" width="295" />
+                <p class="fruits-container-price">80 UAH / kg</p>
+              </picture>
+              <picture class="watermelon fruits-image">
+                <h3 class="fruits-container-header">Watermelon</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="
+                    ./images/watermelon.png    1x,
+                    ./images/watermelon@2x.png 2x
+                  "
+                />
+
+                <img
+                  src="./images/watermelon.png"
+                  alt="Watermelon"
+                  width="295"
+                />
+                <p class="fruits-container-price">40 UAH / kg</p>
+              </picture>
+              <picture class="lime fruits-image">
+                <h3 class="fruits-container-header">Lime</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/lime.png 1x, ./images/lime@2x.png 2x"
+                />
+
+                <img src="./images/lime.png" alt="Lime" width="295" />
+                <p class="fruits-container-price">60 UAH / kg</p>
+              </picture>
+              <picture class="apple fruits-image">
+                <h3 class="fruits-container-header">Apple</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/apple.png 1x, ./images/apple@2x.png 2x"
+                />
+
+                <img src="./images/apple.png" alt="Apple" width="295" />
+                <p class="fruits-container-price">50 UAH / kg</p>
+              </picture>
+              <picture class="peach fruits-image">
+                <h3 class="fruits-container-header">Peach</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/peach.png 1x, ./images/peach@2x.png 2x"
+                />
+
+                <img src="./images/peach.png" alt="Peach" width="295" />
+                <p class="fruits-container-price">80 UAH / kg</p>
+              </picture>
+              <picture class="plum fruits-image">
+                <h3 class="fruits-container-header">Plum</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/plum.png 1x, ./images/plum@2x.png 2x"
+                />
+
+                <img src="./images/plum.png" alt="Plum" width="295" />
+                <p class="fruits-container-price">40 UAH / kg</p>
+              </picture>
+              <picture class="orange fruits-image">
+                <h3 class="fruits-container-header">Orange</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/orange.png 1x, ./images/orange@2x.png 2x"
+                />
+
+                <img src="./images/orange.png" alt="Orange" width="295" />
+                <p class="fruits-container-price">60 UAH / kg</p>
+              </picture>
+              <picture class="kiwi fruits-image">
+                <h3 class="fruits-container-header">Kiwi</h3>
+                <p class="fruits-container-text">Plant</p>
+                <source
+                  srcset="./images/kiwi.png 1x, ./images/kiwi@2x.png 2x"
+                />
+
+                <img src="./images/kiwi.png" alt="Kiwi" width="295" />
+                <p class="fruits-container-price">90 UAH / kg</p>
+              </picture>
+            </div>
+          </div>
+
+          <div class="order-wrap">
+            <button type="button" class="order-button button" data-modal-open>
+              <div class="order-button-wrap">
+                <svg class="order-icon" width="14" height="14">
+                  <use href="./images/icons.svg#icon-arrow"></use>
+                </svg>
+                <p class="order-button-text">oRDER</p>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <h2 class="modal-header">Your Order</h2>
+            <button class="modal-close button" type="button" data-modal-close>
+              <svg class="modal-close-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+
+            <div class="modal-content">
+              <form>
+                <fieldset class="modal-fields fruit_orders">
+                  <label class="modal-orders strawberry_basket">
+                    <input
+                      class="modal-checkbox visually-hidden"
+                      type="checkbox"
+                      name="fruit"
+                      value="strawberry"
+                    />
+                    <svg class="modal-checkbox-icon" width="14" height="14">
+                      <use href="./images/icons.svg#icon-check"></use>
+                    </svg>
+                    <div class="order-details">
+                      <h3 class="order-labels">Strawberry Basket</h3>
+                      <p class="order-text">Plant</p>
+                    </div>
+                    <div class="order-image">
+                      <picture>
+                        <source
+                          srcset="
+                            ./images/strawberry_basket_d.png    1x,
+                            ./images/strawberry_basket_d@2x.png 2x
+                          "
+                          media="(min-width: 1280px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/strawberry_basket_t.png    1x,
+                            ./images/strawberry_basket_t@2x.png 2x
+                          "
+                          media="(min-width: 768px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/strawberry_basket_m.png    1x,
+                            ./images/strawberry_basket_m@2x.png 2x
+                          "
+                          media="(max-width: 767px)"
+                        />
+
+                        <img
+                          src="./images/strawberry_basket_m.png"
+                          alt="Strawberry Basket"
+                          width="88"
+                        />
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="modal-orders apple_basket">
+                    <input
+                      class="modal-checkbox visually-hidden"
+                      type="checkbox"
+                      name="fruit"
+                      value="apple"
+                    />
+                    <svg class="modal-checkbox-icon" width="14" height="14">
+                      <use href="./images/icons.svg#icon-check"></use>
+                    </svg>
+                    <div class="order-details">
+                      <h3 class="order-labels">Apple Basket</h3>
+                      <p class="order-text">Plant</p>
+                    </div>
+                    <div class="order-image">
+                      <picture>
+                        <source
+                          srcset="
+                            ./images/apple_basket_d.png    1x,
+                            ./images/apple_basket_d@2x.png 2x
+                          "
+                          media="(min-width: 1280px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/apple_basket_t.png    1x,
+                            ./images/apple_basket_t@2x.png 2x
+                          "
+                          media="(min-width: 768px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/apple_basket_m.png    1x,
+                            ./images/apple_basket_m@2x.png 2x
+                          "
+                          media="(max-width: 767px)"
+                        />
+
+                        <img
+                          src="./images/apple_basket_m.png"
+                          alt="Apple Basket"
+                          width="106"
+                        />
+                      </picture>
+                    </div>
+                  </label>
+                  <label class="modal-orders fruits_basket">
+                    <input
+                      class="modal-checkbox visually-hidden"
+                      type="checkbox"
+                      name="fruit"
+                      value="fruits"
+                    />
+                    <svg class="modal-checkbox-icon" width="14" height="14">
+                      <use href="./images/icons.svg#icon-check"></use>
+                    </svg>
+                    <div class="order-details">
+                      <h3 class="order-labels">Fruits Basket</h3>
+                      <p class="order-text">Plant</p>
+                    </div>
+                    <div class="order-image">
+                      <picture>
+                        <source
+                          srcset="
+                            ./images/fruits_basket_d.png    1x,
+                            ./images/fruits_basket_d@2x.png 2x
+                          "
+                          media="(min-width: 1280px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/fruits_basket_t.png    1x,
+                            ./images/fruits_basket_t@2x.png 2x
+                          "
+                          media="(min-width: 768px)"
+                        />
+
+                        <source
+                          srcset="
+                            ./images/fruits_basket_m.png    1x,
+                            ./images/fruits_basket_m@2x.png 2x
+                          "
+                          media="(max-width: 767px)"
+                        />
+
+                        <img
+                          src="./images/fruits_basket_m.png"
+                          alt="Fruits Basket"
+                          width="107"
+                        />
+                      </picture>
+                    </div>
+                  </label>
+                  <!-- Add more fruit options here -->
+                </fieldset>
+
+                <fieldset class="modal-fields">
+                  <label class="text-fields order-text-name">
+                    <input
+                      type="text"
+                      name="name"
+                      style="border: none"
+                      pattern="[A-Za-z\s]+"
+                      placeholder="Enter full name..."
+                      required
+                    />
+                  </label>
+                </fieldset>
+                <fieldset class="modal-fields">
+                  <label class="text-fields order-text-email">
+                    <input
+                      type="email"
+                      name="email"
+                      style="border: none"
+                      placeholder="Enter email..."
+                      required
+                    />
+                  </label>
+                </fieldset>
+
+                <fieldset class="modal-fields">
+                  <label class="text-fields order-text-card">
+                    <input
+                      type="text"
+                      name="card"
+                      style="border: none"
+                      pattern="[0-9]{16}"
+                      placeholder="Enter card.."
+                      required
+                    />
+                  </label>
+                </fieldset>
+
+                <fieldset class="modal-fields">
+                  <label class="text-fields order-text-comment">
+                    <textarea
+                      name="comments"
+                      style="border: none"
+                      placeholder="Enter comments..."
+                    ></textarea>
+                  </label>
+                </fieldset>
+
+                <button class="modal-submit button" data-modal-submit>
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="backdrop-thankyou is-hidden" data-modal-thankyou>
+          <div class="modal-thankyou">
+            <button
+              class="modal-close-thankyou button"
+              type="button"
+              data-modal-close-thankyou
+            >
+              <svg class="modal-close-icon-thankyou" width="24" height="24">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+
+            <div class="modal-content-thankyou">
+              <img
+                class="thankyou-img"
+                srcset="
+                  ./images/raspberry_m.png    1x,
+                  ./images/raspberry_m@2x.png 2x
+                "
+                src="./images/raspberry_m.png"
+                alt="Raspberry"
+              />
+              <h2 class="modal-header-thankyou">Thank You!</h2>
+              <p class="modal-thankyou-text">
+                Thank you for your order! Our team is preparing your box with
+                fresh, delicious fruits and vegetables, and we'll deliver it
+                straight to your doorstep. We appreciate your business and look
+                forward to providing you with the best possible experience!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1253 @@
+:root {
+  --white-color: #ffffff;
+  --red-color: #ae1332;
+  --black-color: #000000;
+  --background-green-color: #a4cb66;
+  --background-yellow-color: #f5ce13;
+  --background-light-green-color: #a1c864;
+  --strawberry-color: #f8766b;
+  --banana-color: #edd251;
+  --watermelon-color: #9dc262;
+  --lime-color: #bfd663;
+  --apple-color: #e93f29;
+  --peach-color: #db4f4b;
+  --plum-color: #9b5366;
+  --orange-color: #f47f4c;
+  --kiwi-color: #98b37e;
+  --pop-up-color: #e03f5e;
+  --send-submit-color: #9dc162;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.container {
+  width: 375px;
+  background-color: var(--red-color);
+  margin: 0 auto;
+}
+
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-button {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--watermelon-color);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  flex-direction: row;
+}
+
+.order-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 28px;
+  gap: 4px;
+}
+
+.order-button-text {
+  display: flex;
+  align-items: start;
+  color: var(--white-color);
+  text-align: center;
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  transform: rotate(-14deg);
+  padding-bottom: 7px;
+}
+
+.order-icon {
+  fill: var(--white-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-thankyou {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  width: 335px;
+  height: auto;
+  background-color: var(--white-color);
+  border: 1px solid var(--black-color);
+  border-radius: 20px;
+
+  overflow-y: auto;
+  max-height: 100vh;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 374px) {
+    min-width: 100%;
+  }
+}
+
+.modal-thankyou {
+  position: absolute;
+
+  padding: 40px 20px;
+  top: 50%;
+  left: 50%;
+  width: 335px;
+  height: auto;
+  background-color: var(--pop-up-color);
+  border: 1px solid none;
+  border-radius: 20px;
+
+  overflow-y: auto;
+  max-height: 100vh;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 374px) {
+    min-width: 100%;
+  }
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-header {
+  color: var(--red-color);
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+
+  margin-bottom: 40px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--white-color);
+  border: none;
+  stroke: var(--red-color);
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-thankyou {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--pop-up-color);
+  border: none;
+  stroke: var(--white-color);
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-fields {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+}
+
+input:invalid,
+textarea:invalid {
+  border: 1px solid red;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.order-details-container.submitting .modal-submit {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.order-details-container input:invalid {
+  border: 1px solid red;
+}
+
+.modal-checkbox-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 2px;
+  fill: none;
+  border: 2px solid var(--white-color);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-checkbox:checked + .modal-checkbox-icon {
+  background-color: none;
+  fill: var(--white-color);
+}
+
+.modal-orders {
+  display: flex;
+  width: 100%;
+  height: 119px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+
+  position: relative;
+}
+
+.order-details {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.order-image {
+  display: flex;
+  margin-left: auto;
+  padding-top: 16px;
+  padding-right: 32px;
+}
+
+.order-labels {
+  color: var(--white-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+  margin-bottom: 2px;
+}
+
+.order-text {
+  color: var(--white-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+
+.strawberry_basket {
+  background-color: var(--strawberry-color);
+}
+
+.apple_basket {
+  background-color: var(--banana-color);
+}
+
+.fruits_basket {
+  background-color: var(--watermelon-color);
+  margin-bottom: 40px;
+}
+
+.text-fields {
+  display: flex;
+}
+
+.order-text-name,
+.order-text-email,
+.order-text-card {
+  border-radius: 100px;
+  border: 1px solid var(--black-color);
+  opacity: 0.3;
+  outline: none;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 14px;
+  padding: 14px 24px;
+  color: var(--black-color);
+}
+
+.order-text-comment {
+  border-radius: 20px;
+  border: 1px solid var(--black-color);
+  opacity: 0.3;
+  outline: none;
+  width: 100%;
+  height: 132px;
+  resize: none;
+  margin-bottom: 20px;
+  padding: 14px 24px;
+  color: var(--black-color);
+}
+
+.modal-submit {
+  border-radius: 100px;
+  background: var(--send-submit-color);
+  border: none;
+
+  color: var(--white-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  padding: 12px 24px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.backdrop-thankyou.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-content-thankyou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.thankyou-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-close-icon-thankyou {
+  fill: var(--white-color);
+}
+
+.modal-header-thankyou {
+  color: var(--white-color);
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  margin-bottom: 14px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -1.12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.modal-thankyou-text {
+  color: var(--white-color);
+  text-align: center;
+  text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+
+  .order-button {
+    display: flex;
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background-color: var(--watermelon-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    flex-direction: row;
+  }
+
+  .order-button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 28px;
+    gap: 4px;
+  }
+
+  .order-button-text {
+    display: flex;
+    align-items: start;
+    color: var(--white-color);
+    text-align: center;
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.72px;
+    text-transform: uppercase;
+    transform: rotate(-14deg);
+    padding-bottom: 7px;
+  }
+
+  .order-icon {
+    fill: var(--white-color);
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .backdrop-thankyou {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal {
+    position: absolute;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    width: 704px;
+    height: auto;
+    background-color: var(--white-color);
+    border: 1px solid var(--black-color);
+    border-radius: 20px;
+
+    overflow-y: auto;
+    max-height: 100vh;
+
+    background-image: url(../images/banana_girl_t.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% + 173px) bottom;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/banana_girl_t.png);
+    }
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 374px) {
+      min-width: 100%;
+    }
+  }
+
+  .modal-thankyou {
+    position: absolute;
+
+    padding: 68px 104px 80px 105px;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: auto;
+    background-color: var(--pop-up-color);
+    border: 1px solid none;
+    border-radius: 20px;
+
+    overflow-y: auto;
+    max-height: 100vh;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 374px) {
+      min-width: 100%;
+    }
+  }
+
+  .modal-thankyou img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .modal-header {
+    color: var(--red-color);
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+
+    margin-bottom: 40px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--white-color);
+    border: none;
+    stroke: var(--red-color);
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-close-thankyou {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--pop-up-color);
+    border: none;
+    stroke: var(--white-color);
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-close-icon {
+    fill: currentColor;
+    width: 28px;
+    height: 28px;
+  }
+
+  .is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .modal-content {
+    width: 100%;
+  }
+
+  .modal-fields {
+    display: flex;
+    gap: 14px;
+    border: none;
+    padding: 0;
+  }
+
+  .modal-checkbox-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 4px;
+    fill: none;
+    border: 2px solid var(--white-color);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-checkbox:checked + .modal-checkbox-icon {
+    background-color: none;
+    fill: var(--white-color);
+  }
+
+  .modal-orders {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+
+    position: relative;
+  }
+
+  .order-details {
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+
+  .order-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+    padding-top: 0;
+    padding-right: 0;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .order-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .order-labels {
+    color: var(--white-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.72px;
+    margin-bottom: 2px;
+  }
+
+  .order-text {
+    color: var(--white-color);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+  }
+
+  .strawberry_basket {
+    background-color: var(--strawberry-color);
+  }
+
+  .apple_basket {
+    background-color: var(--banana-color);
+  }
+
+  .fruits_basket {
+    background-color: var(--watermelon-color);
+    margin-bottom: 40px;
+  }
+
+  .text-fields {
+    display: flex;
+  }
+
+  .order-text-name,
+  .order-text-email,
+  .order-text-card {
+    border-radius: 100px;
+    border: 1px solid var(--black-color);
+    opacity: 0.3;
+    outline: none;
+    width: 360px;
+    height: 48px;
+    margin-bottom: 14px;
+    padding: 14px 24px;
+    color: var(--black-color);
+  }
+
+  .order-text-comment {
+    border-radius: 20px;
+    border: 1px solid var(--black-color);
+    opacity: 0.3;
+    outline: none;
+    width: 360px;
+    height: 145px;
+    resize: none;
+    margin-bottom: 20px;
+    padding: 14px 24px;
+    color: var(--black-color);
+  }
+
+  .modal-submit {
+    border-radius: 100px;
+    background: var(--send-submit-color);
+    border: none;
+
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    padding: 15px 35px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .backdrop-thankyou.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .modal-content-thankyou {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .thankyou-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .modal-close-icon-thankyou {
+    fill: var(--white-color);
+  }
+
+  .modal-header-thankyou {
+    color: var(--white-color);
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    margin-bottom: 14px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .modal-thankyou-text {
+    color: var(--white-color);
+    text-align: center;
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+
+  .order-button {
+    display: flex;
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background-color: var(--watermelon-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    flex-direction: row;
+  }
+
+  .order-button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 28px;
+    gap: 4px;
+  }
+
+  .order-button-text {
+    display: flex;
+    align-items: start;
+    color: var(--white-color);
+    text-align: center;
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.72px;
+    text-transform: uppercase;
+    transform: rotate(-14deg);
+    padding-bottom: 7px;
+  }
+
+  .order-icon {
+    fill: var(--white-color);
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .backdrop-thankyou {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal {
+    position: absolute;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    width: 891px;
+    height: auto;
+    background-color: var(--white-color);
+    border: 1px solid var(--black-color);
+    border-radius: 20px;
+
+    overflow-y: auto;
+    max-height: 100vh;
+
+    background-image: url(../images/banana_girl_t.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/banana_girl_t.png);
+    }
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 374px) {
+      min-width: 100%;
+    }
+  }
+
+  .modal-thankyou {
+    position: absolute;
+
+    padding: 68px 104px 80px 105px;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: auto;
+    background-color: var(--pop-up-color);
+    border: 1px solid none;
+    border-radius: 20px;
+
+    overflow-y: auto;
+    max-height: 100vh;
+
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: 374px) {
+      min-width: 100%;
+    }
+  }
+
+  .modal-thankyou img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .modal-header {
+    color: var(--red-color);
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+
+    margin-bottom: 40px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--white-color);
+    border: none;
+    stroke: var(--red-color);
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-close-thankyou {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--pop-up-color);
+    border: none;
+    stroke: var(--white-color);
+    cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-close-icon {
+    fill: currentColor;
+    width: 28px;
+    height: 28px;
+  }
+
+  .is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .modal-content {
+    width: 100%;
+  }
+
+  .modal-fields {
+    display: flex;
+    gap: 14px;
+    border: none;
+    padding: 0;
+  }
+
+  .modal-checkbox-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 4px;
+    fill: none;
+    border: 2px solid var(--white-color);
+
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-checkbox:checked + .modal-checkbox-icon {
+    background-color: none;
+    fill: var(--white-color);
+  }
+
+  .modal-orders {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 308px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+
+    position: relative;
+  }
+
+  .order-details {
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+
+  .order-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+
+    padding-top: 0;
+    padding-right: 0;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .order-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .order-labels {
+    color: var(--white-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.96px;
+    margin-bottom: 2px;
+  }
+
+  .order-text {
+    color: var(--white-color);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+  }
+
+  .strawberry_basket {
+    background-color: var(--strawberry-color);
+  }
+
+  .apple_basket {
+    background-color: var(--banana-color);
+  }
+
+  .fruits_basket {
+    background-color: var(--watermelon-color);
+    margin-bottom: 40px;
+  }
+
+  .text-fields {
+    display: flex;
+  }
+
+  .order-text-name,
+  .order-text-email,
+  .order-text-card {
+    border-radius: 100px;
+    border: 1px solid var(--black-color);
+    opacity: 0.3;
+    outline: none;
+    width: 360px;
+    height: 48px;
+    margin-bottom: 14px;
+    padding: 14px 24px;
+    color: var(--black-color);
+  }
+
+  .order-text-comment {
+    border-radius: 20px;
+    border: 1px solid var(--black-color);
+    opacity: 0.3;
+    outline: none;
+    width: 360px;
+    height: 145px;
+    resize: none;
+    margin-bottom: 20px;
+    padding: 14px 24px;
+    color: var(--black-color);
+  }
+
+  .modal-submit {
+    border-radius: 100px;
+    background: var(--send-submit-color);
+    border: none;
+
+    color: var(--white-color);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+    padding: 15px 35px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .backdrop-thankyou.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .modal-content-thankyou {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .thankyou-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .modal-close-icon-thankyou {
+    fill: var(--white-color);
+  }
+
+  .modal-header-thankyou {
+    color: var(--white-color);
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    margin-bottom: 14px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: -1.6px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .modal-thankyou-text {
+    color: var(--white-color);
+    text-align: center;
+    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+  }
+}
