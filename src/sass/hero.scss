@@ -93,6 +93,8 @@ button {
 
 .hero {
   padding-top: 56px;
+  --anim-duration: 1s;
+  --anim-offset: 1000px;
 }
 
 .hero-container {
@@ -135,6 +137,17 @@ button {
   filter: blur(2px);
   transform: rotate(20deg);
   z-index: -1;
+}
+
+.block-title {
+  padding-bottom: 59px;
+  color: #fff;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.48px;
 }
 
 .hero-block-title {
@@ -199,6 +212,8 @@ button {
 .hero-watermelon {
   margin-left: auto;
   margin-right: auto;
+  animation-name: fadeInLeftMy;
+  animation-duration: var(--anim-duration);
 }
 
 .hero-watermelon-description {
@@ -229,6 +244,55 @@ button {
   background: var(--light-green);
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero-strawberry {
+  margin-top: 44px;
+  animation-name: fadeInRightMy;
+  animation-duration: var(--anim-duration);
+}
+
+.hero-container,
+.hero-block-title,
+.hero-watermelon-description,
+.hero-strawberry-block,
+.block-title,
+.hashtag-list,
+.hero-link,
+.hero-girl {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* HOVER ANIMATION */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Apply the animation to links on hover */
+a:hover {
+  animation: scaleUp 0.2s ease-in-out;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*  keyframe animation for continuous rotation */
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animation to an element */
+.hero-title:before {
+  animation: rotate360 10s linear infinite;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
@@ -323,8 +387,12 @@ button {
   text-transform: uppercase;
 }
 
-.hero-strawberry {
-  margin-top: 44px;
+.hero-girl {
+  position: relative;
+  order: -1;
+  margin-bottom: 84px;
+  animation-name: fadeInDownMy;
+  animation-duration: var(--anim-duration);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279.98px) {
@@ -332,12 +400,6 @@ button {
     align-items: end;
     margin-bottom: 7px;
   }
-}
-
-.hero-girl {
-  position: relative;
-  order: -1;
-  margin-bottom: 84px;
 }
 
 .hero-link:hover,
@@ -515,8 +577,8 @@ button {
     text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
     font-size: 64px;
     font-weight: 500;
-    line-height: 64px; /* 100% */
-    letter-spacing: -2.56px;
+    line-height: 1;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
   }
 
@@ -580,5 +642,47 @@ button {
     text-shadow: 0 4px 70px rgba(0, 0, 0, 0.1);
     transform: rotate(-14deg);
     transition: color var(--anim-transition), transform var(--anim-transition);
+  }
+}
+
+@keyframes fadeInDownMy {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(calc(var(--anim-offset) * -1));
+    transform: translateY(calc(var(--anim-offset) * -1));
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeftMy {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(calc(var(--anim-offset) * -1));
+    transform: translate(calc(var(--anim-offset) * -1));
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes fadeInRightMy {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(var(--anim-offset));
+    transform: translate(var(--anim-offset));
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translate(0);
   }
 }
