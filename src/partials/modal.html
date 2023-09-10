@@ -1,5 +1,5 @@
 <!-- Fruits -->
-<section class="section fruits-section">
+<section class="section fruits-section" id="organic-fruits">
   <div class="fruits">
     <h2 class="fruits-header">oRGANIC fRUITS</h2>
     <p class="fruits-text">
@@ -91,15 +91,26 @@
     </div>
 
     <div class="order-wrap">
-      <button type="button" class="order-button button" data-modal-open>
+      <button type="button" class="order-button" data-modal-open>
+        <svg id="order-icon" class="order-icon" width="14" height="14">
+          <use href="./images/icons.svg#icon-arrow"></use>
+        </svg>
+        ORDER
+        <!-- <p class="order-button-text">oRDER</p> -->
+      </button>
+    </div>
+
+    <!-- <div class="order-wrap">
+      <button type="button" class="order-button" data-modal-open>
         <div class="order-button-wrap">
           <svg class="order-icon" width="14" height="14">
             <use href="./images/icons.svg#icon-arrow"></use>
           </svg>
+          ORDER
           <p class="order-button-text">oRDER</p>
         </div>
       </button>
-    </div>
+    </div> -->
   </div>
 
   <!-- Modal -->
