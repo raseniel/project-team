@@ -314,6 +314,8 @@ img {
   border: 1px solid var(--black-color);
   border-radius: 20px;
 
+  z-index: 200;
+
   overflow-y: auto;
   max-height: 100vh;
 
