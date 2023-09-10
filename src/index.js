@@ -13,17 +13,17 @@
 //     }
 //   })();
 
-(() => {
-  const refs = {
-    openModalBtn: document.querySelector("[contact-data-modal-open]"),
-    closeModalBtn: document.querySelector("[contact-data-modal-close]"),
-    modal: document.querySelector("[contact-data-modal]"),
-  };
+// (() => {
+//   const refs = {
+//     openModalBtn: document.querySelector("[contact-data-modal-open]"),
+//     closeModalBtn: document.querySelector("[contact-data-modal-close]"),
+//     modal: document.querySelector("[contact-data-modal]"),
+//   };
 
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
+//   refs.openModalBtn.addEventListener("click", toggleModal);
+//   refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function toggleModal() {
-    refs.modal.classList.toggle("contact-is-hidden");
-  }
-})();
+//   function toggleModal() {
+//     refs.modal.classList.toggle("contact-is-hidden");
+//   }
+// })();
