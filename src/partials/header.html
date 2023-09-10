@@ -1,106 +1,82 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fresh Harvest</title>
+<header class="header">
+  <div class="container header-container">
+    <nav class="header-navigation">
+      <ul class="header-list list">
+        <li>
+          <a class="header-link link-underline link" href="">How It Works</a>
+        </li>
+        <li>
+          <a class="header-link link-underline link" href="">Fruits</a>
+        </li>
+        <li>
+          <a class="header-link link-underline link" href="">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-icon">
+      <svg class="logo-icon" width="16" height="16">
+        <use href="./images/header.svg#logo-icon"></use>
+      </svg>
+      <a class="header-logo link" href="">FRESH HARVEST BOX</a>
+    </div>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <div class="shopping-cart">
+      <svg class="cart-icon" width="28" height="28">
+        <use href="./images/header.svg#cart-icon"></use>
+      </svg>
+    </div>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container header-container">
-        <nav class="header-navigation">
-          <ul class="header-list list">
-            <li>
-              <a class="header-link link-underline link" href=""
-                >How It Works</a
-              >
-            </li>
-            <li>
-              <a class="header-link link-underline link" href="">Fruits</a>
-            </li>
-            <li>
-              <a class="header-link link-underline link" href="">Contacts</a>
-            </li>
-          </ul>
-        </nav>
+    <!-- Hamburger Menu Open -->
+    <div class="menu-button">
+      <button
+        class="menu-toggle"
+        data-menu-open
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="menu-icon" width="24" height="24">
+          <use href="./images/header.svg#hamburger-icon-open"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- Hamburger Menu Close Icon and Navigations-->
+<div class="menu-container" data-menu>
+  <!-- Hamburger Menu Close Icon-->
+  <div class="container-mobile">
+    <div class="mobile-menu-content container">
+      <div class="hamburger-header">
         <div class="header-icon">
           <svg class="logo-icon" width="16" height="16">
-            <use href="./images/icons.svg#logo-icon"></use>
+            <use href="./images/header.svg#logo-icon"></use>
           </svg>
           <a class="header-logo link" href="">FRESH HARVEST BOX</a>
         </div>
-
-        <div class="shopping-cart">
-          <svg class="cart-icon" width="28" height="28">
-            <use href="./images/icons.svg#cart-icon"></use>
-          </svg>
-        </div>
-
-        <!-- Hamburger Menu Open -->
-        <div class="menu-button">
-          <button
-            class="menu-toggle"
-            data-menu-open
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-          >
-            <svg class="menu-icon" width="24" height="24">
-              <use href="./images/icons.svg#hamburger-icon-open"></use>
+        <div>
+          <button class="menu-toggle" data-menu-close>
+            <svg class="x-button" width="24" height="24">
+              <use href="./images/header.svg#x-button"></use>
             </svg>
           </button>
         </div>
       </div>
-    </header>
-    <!-- Hamburger Menu Close Icon and Navigations-->
-    <div class="menu-container" data-menu>
-      <!-- Hamburger Menu Close Icon-->
-      <div class="container-mobile">
-        <div class="mobile-menu-content container">
-          <div class="hamburger-header">
-            <div class="header-icon">
-              <svg class="logo-icon" width="16" height="16">
-                <use href="./images/icons.svg#logo-icon"></use>
-              </svg>
-              <a class="header-logo link" href="">FRESH HARVEST BOX</a>
-            </div>
-            <div>
-              <button class="menu-toggle" data-menu-close>
-                <svg class="x-button" width="24" height="24">
-                  <use href="./images/icons.svg#x-button"></use>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="hamburger-menu">
-            <ul class="hamburger-list list">
-              <li>
-                <a href="" class="hamburger-link link current">How It Works</a>
-              </li>
-              <li>
-                <a href="" class="hamburger-link link">Fruits</a>
-              </li>
-              <li>
-                <a href="" class="hamburger-link link">Contacts</a>
-              </li>
-            </ul>
-            <svg class="cart-icon-hamburger" width="28" height="28">
-              <use href="./images/icons.svg#cart-icon-hamburger"></use>
-            </svg>
-          </div>
-        </div>
+      <div class="hamburger-menu">
+        <ul class="hamburger-list list">
+          <li>
+            <a href="" class="hamburger-link link current">How It Works</a>
+          </li>
+          <li>
+            <a href="" class="hamburger-link link">Fruits</a>
+          </li>
+          <li>
+            <a href="" class="hamburger-link link">Contacts</a>
+          </li>
+        </ul>
+        <svg class="cart-icon-hamburger" width="28" height="28">
+          <use href="./images/header.svg#cart-icon-hamburger"></use>
+        </svg>
       </div>
     </div>
-    <!-- Hamburger Menu Script -->
-    <script src="./js/mobile-menu.js"></script>
-  </body>
-</html>
+  </div>
+</div>

@@ -291,7 +291,7 @@ display: none;
 
 
 
-.backdrop {
+.contact-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -302,7 +302,7 @@ display: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .modal {
+  .contact-modal {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -329,11 +329,11 @@ display: none;
   }
   
   
-  .backdrop.is-hidden .modal {
+  .contact-backdrop.contact-is-hidden .contact-modal {
     transform: translate(-50%, -50%) scale(0);
   }
   
-  .modal-close {
+  .contact-modal-close {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -353,28 +353,28 @@ display: none;
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .modal-close-icon {
+  .contact-modal-close-icon {
     fill: currentColor;
   }
   
-  .modal-close:hover,
-  .modal-close:focus {
+  .contact-modal-close:hover,
+  .contact-modal-close:focus {
     background-color: #fff;
     color: #E03F5E;
   }
   
-  .is-hidden {
+  .contact-is-hidden {
     visibility: none;
     opacity: 0;
     pointer-events: none;
   }
 
-  .modal-image-container{
+  .contact-modal-image-container{
     width: 278px;
     height: 239px;
   }
 
-  .modal-text-wrapper{
+  .contact-modal-text-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

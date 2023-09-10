@@ -463,7 +463,7 @@ a:hover {
     height: 108px;
     right: 5px;
     top: -9px;
-    background-image: url(/images/hero-strawberry.png);
+    background-image: url(../images/hero-strawberry.png);
     background-size: 108px 108px;
     filter: blur(3.5px);
   }
@@ -473,7 +473,7 @@ a:hover {
     height: 88px;
     left: 7px;
     bottom: -47px;
-    background-image: url(/images/hero-banana.png);
+    background-image: url(../images/hero-banana.png);
     background-size: 132px 88px;
     filter: blur(4px);
   }
@@ -528,6 +528,7 @@ a:hover {
 
   .hero-container {
     max-width: 1280px;
+    padding-top: 150px;
   }
 
   .hero-girl {
@@ -589,7 +590,7 @@ a:hover {
     height: 120px;
     right: 32px;
     top: -25px;
-    background: url(/images/strawberry-hero.png);
+    background: url(../images/strawberry-hero.png);
     background-repeat: no-repeat;
     filter: blur(3.5px);
     z-index: -1;
@@ -603,7 +604,7 @@ a:hover {
     left: 32px;
     bottom: -81px;
     transform: rotate(20deg);
-    background: url(/images/hero-banana.png);
+    background: url(../images/hero-banana.png);
     filter: blur(3.5px);
     background-repeat: no-repeat;
     z-index: -1;
