@@ -50,7 +50,7 @@ body {
 
 img {
   display: block;
-
+  // flex-wrap: wrap;
   max-width: 100%;
   height: auto;
 }
@@ -65,7 +65,7 @@ img {
   text-decoration: none;
 }
 
-.container {
+.fruits {
   width: 375px;
   background-color: var(--red-color);
   margin: 0 auto;
@@ -78,6 +78,7 @@ img {
 }
 
 .fruits-section {
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,13 +102,13 @@ img {
 
   padding-left: 20px;
   padding-right: 20px;
-
+  width: 100%;
   margin-bottom: 44px;
 }
 
 .fruits-wrapper {
   display: flex;
-
+  width: 100%;
   flex-wrap: wrap;
   gap: 14px;
 }
@@ -132,7 +133,7 @@ img {
   font-weight: 700;
   line-height: 28px;
   letter-spacing: -0.96px;
-
+  text-align: left;
   margin-bottom: 14px;
 }
 
@@ -218,15 +219,39 @@ img {
 
 .order-button {
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
   width: 80px;
   height: 80px;
+  gap: 4px;
+  fill: var(--white-color);
+  color: var(--white-color);
+  padding: 26px 0;
+  text-align: center;
+  text-shadow: var(--text-shadow);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.285;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
   border-radius: 50%;
-  background-color: var(--watermelon-color);
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
   border: none;
-  flex-direction: row;
+  transform: rotate(-14deg);
+  cursor: pointer;
+  background-color: var(--watermelon-color);
+  transition: 0.2s linear;
+}
+
+@keyframes button-effect {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    border-radius: 50%;
+    rotate: 360deg;
+  }
 }
 
 .order-button-wrap {
@@ -250,9 +275,9 @@ img {
   padding-bottom: 7px;
 }
 
-.order-icon {
-  fill: var(--white-color);
-}
+// .order-icon {
+//   fill: var(--white-color);
+// }
 
 .backdrop {
   position: fixed;
@@ -288,6 +313,8 @@ img {
   background-color: var(--white-color);
   border: 1px solid var(--black-color);
   border-radius: 20px;
+
+  z-index: 1000;
 
   overflow-y: auto;
   max-height: 100vh;
@@ -597,7 +624,7 @@ textarea:focus {
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-  .container {
+  .fruits {
     width: 768px;
   }
 
@@ -616,7 +643,7 @@ textarea:focus {
   .fruits-container {
     display: flex;
     flex-wrap: wrap;
-
+    width: 100%;
     padding-left: 32px;
     padding-right: 32px;
 
@@ -625,7 +652,7 @@ textarea:focus {
 
   .fruits-wrapper {
     display: flex;
-
+    width: 100%;
     justify-content: center;
 
     flex-wrap: wrap;
@@ -655,7 +682,7 @@ textarea:focus {
     font-weight: 700;
     line-height: 28px;
     letter-spacing: -0.96px;
-
+    text-align: left;
     margin-bottom: 14px;
   }
 
@@ -776,9 +803,9 @@ textarea:focus {
     padding-bottom: 7px;
   }
 
-  .order-icon {
-    fill: var(--white-color);
-  }
+  // .order-icon {
+  //   fill: var(--white-color);
+  // }
 
   .backdrop {
     position: fixed;
@@ -1152,7 +1179,7 @@ textarea:focus {
   .fruits-container {
     display: flex;
     flex-wrap: wrap;
-
+    width: 100%;
     padding-left: 32.5px;
     padding-right: 32.5px;
 
@@ -1161,7 +1188,7 @@ textarea:focus {
 
   .fruits-wrapper {
     display: flex;
-
+    width: 100%;
     justify-content: center;
 
     flex-wrap: wrap;
@@ -1180,8 +1207,8 @@ textarea:focus {
 
     margin-bottom: 44px;
 
-    padding-left: 366.5px;
-    padding-right: 366.5px;
+    // padding-left: 366.5px;
+    // padding-right: 366.5px;
   }
 
   .fruits-container-header {
@@ -1191,7 +1218,7 @@ textarea:focus {
     font-weight: 700;
     line-height: 28px;
     letter-spacing: -0.96px;
-
+    text-align: left;
     margin-bottom: 14px;
   }
 
@@ -1286,6 +1313,21 @@ textarea:focus {
     justify-content: center;
     border: none;
     flex-direction: row;
+    color: #fff;
+    fill: var(--white-color);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    // fill: #000000;
+    letter-spacing: -0.72px;
+    text-transform: uppercase;
+    transform: rotate(-14deg);
+  }
+
+  .order-button:hover {
+    background-color: var(--white-color);
+    color: var(--watermelon-color);
+    fill: var(--watermelon-color);
   }
 
   .order-button-wrap {
@@ -1294,26 +1336,6 @@ textarea:focus {
     align-items: end;
     height: 28px;
     gap: 4px;
-  }
-
-  .order-button-text {
-    display: flex;
-    align-items: start;
-    color: var(--white-color);
-    text-align: center;
-    text-shadow: 0px 4px 70px rgba(0, 0, 0, 0.1);
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.72px;
-    text-transform: uppercase;
-    transform: rotate(-14deg);
-    padding-bottom: 7px;
-  }
-
-  .order-icon {
-    fill: var(--white-color);
   }
 
   .backdrop {
@@ -1559,6 +1581,12 @@ textarea:focus {
 
   .apple_basket {
     background-color: var(--banana-color);
+  }
+
+  .fruits {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
   }
 
   .fruits_basket {
