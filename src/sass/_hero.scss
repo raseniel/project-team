@@ -292,7 +292,7 @@ a:hover {
 }
 
 /* Apply the animation to an element */
-.hero-title:before {
+.hero-block-title:before {
   animation: rotate360 10s linear infinite;
 }
 
@@ -534,6 +534,7 @@ a:hover {
 
   .hero-girl {
     order: 0;
+    margin-right: 56px;
   }
 
   .hero .hero-container {
