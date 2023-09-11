@@ -80,12 +80,15 @@ body {
   }
 }
 
+.header-link {
+  padding: 16px 0;
+}
+
 .header {
   position: sticky;
   top: 0;
   background: #fff;
   z-index: 100;
-  height: 50px;
 }
 
 .header-container {
