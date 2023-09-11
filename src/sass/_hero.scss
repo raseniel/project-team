@@ -110,7 +110,7 @@ button {
   flex-wrap: wrap;
 }
 
-.hero-title:before {
+.hero-block-title:before {
   position: absolute;
   content: '';
   width: 56px;
@@ -124,7 +124,7 @@ button {
   z-index: -1;
 }
 
-.hero-title:after {
+.hero-block-title:after {
   position: absolute;
   content: '';
   width: 66px;
@@ -152,7 +152,8 @@ button {
 
 .hero-block-title {
   position: absolute;
-  z-index: 2;
+  top: 0;
+  // z-index: 2;
 }
 
 .hero-block-title {
@@ -458,7 +459,7 @@ a:hover {
     padding-top: 64px;
   }
 
-  .hero-title:before {
+  .hero-block-title:before {
     width: 108px;
     height: 108px;
     right: 5px;
@@ -468,7 +469,7 @@ a:hover {
     filter: blur(3.5px);
   }
 
-  .hero-title:after {
+  .hero-block-title:after {
     width: 132px;
     height: 88px;
     left: 7px;
@@ -583,7 +584,7 @@ a:hover {
     text-transform: uppercase;
   }
 
-  .hero-title:before {
+  .hero-block-title:before {
     position: absolute;
     content: '';
     width: 120px;
@@ -593,10 +594,10 @@ a:hover {
     background: url(../images/strawberry-hero.png);
     background-repeat: no-repeat;
     filter: blur(3.5px);
-    z-index: -1;
+    // z-index: -1;
   }
 
-  .hero-title:after {
+  .hero-block-title:after {
     position: absolute;
     content: '';
     width: 199.21px;
@@ -607,7 +608,7 @@ a:hover {
     background: url(../images/hero-banana.png);
     filter: blur(3.5px);
     background-repeat: no-repeat;
-    z-index: -1;
+    // z-index: -1;
   }
 
   .hashtag-list-item {

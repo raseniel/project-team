@@ -1,27 +1,14 @@
 (() => {
-  HEAD;
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
+  const refs1 = {
+    openModalBtn: document.querySelector('[contact-data-modal-open]'),
+    closeModalBtn: document.querySelector('[contact-data-modal-close]'),
+    modal: document.querySelector('[contact-data-modal]'),
   };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs1.openModalBtn.addEventListener('click', toggleModal);
+  refs1.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
+    refs1.modal.classList.toggle('contact-is-hidden');
   }
 })();
-const refs = {
-  openModalBtn: document.querySelector('[contact-data-modal-open]'),
-  closeModalBtn: document.querySelector('[contact-data-modal-close]'),
-  modal: document.querySelector('[contact-data-modal]'),
-};
-
-refs.openModalBtn.addEventListener('click', toggleModal);
-refs.closeModalBtn.addEventListener('click', toggleModal);
-
-function toggleModal() {
-  refs.modal.classList.toggle('contact-is-hidden');
-}

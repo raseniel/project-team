@@ -29,8 +29,8 @@
   padding: 80px 32px;
 }
 
-.page-footer{
-  background: #FFF;
+.page-footer {
+  background: #fff;
 }
 
 .container {
@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 375px) {
   /* Mobile styles */
-  .container {
+  .container-footer {
     flex-direction: column;
   }
 
