@@ -111,6 +111,8 @@ img {
     flex-direction: row;
     gap: 24px;
     justify-content: center;
+
+    
            
     @media screen and (min-width: 768px){
        
@@ -127,6 +129,11 @@ img {
     height: auto;
     overflow: hidden;
     border-radius: 20px;
+
+    @media screen and (min-width: 375px){
+      width: 335px;
+      height: 476px;
+    }
 
 
     @media screen and (min-width: 768px){
