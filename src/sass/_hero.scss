@@ -153,7 +153,7 @@ button {
 .hero-block-title {
   position: absolute;
   top: 0;
-  // z-index: 2;
+  z-index: 2;
 }
 
 .hero-block-title {
@@ -595,7 +595,7 @@ a:hover {
     background: url(../images/strawberry-hero.png);
     background-repeat: no-repeat;
     filter: blur(3.5px);
-    // z-index: -1;
+    z-index: -1;
   }
 
   .hero-block-title:after {
