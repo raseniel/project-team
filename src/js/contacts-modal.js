@@ -5,10 +5,10 @@
     modal: document.querySelector('[contact-data-modal]'),
   };
 
-  refs1.openModalBtn.addEventListener('click', toggleModal);
-  refs1.closeModalBtn.addEventListener('click', toggleModal);
+  refs1.openModalBtn.addEventListener('click', toggleModalContacts);
+  refs1.closeModalBtn.addEventListener('click', toggleModalContacts);
 
-  function toggleModal() {
+  function toggleModalContacts() {
     refs1.modal.classList.toggle('contact-is-hidden');
   }
 })();

@@ -1,14 +1,16 @@
 (() => {
-  const refs = {
+  const refsNav = {
     openMenuBtn: document.querySelector('[data-menu-open]'),
     closeMenuBtn: document.querySelector('[data-menu-close]'),
+    closeNavBtn: document.querySelector('[data-nav-close]'),
     menu: document.querySelector('[data-menu]'),
   };
 
-  refs.openMenuBtn.addEventListener('click', toggleModal);
-  refs.closeMenuBtn.addEventListener('click', toggleModal);
+  refsNav.openMenuBtn.addEventListener('click', toggleModalNav);
+  refsNav.closeMenuBtn.addEventListener('click', toggleModalNav);
+  refsNav.closeNavBtn.addEventListener('click', toggleModalNav);
 
-  function toggleModal() {
-    refs.menu.classList.toggle('is-open');
+  function toggleModalNav() {
+    refsNav.menu.classList.toggle('is-open');
   }
 })();
